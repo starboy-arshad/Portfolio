@@ -222,6 +222,9 @@ const projectImages = {
   "wow-graphics": [
     "images/Screenshot (18).png",
     "images/Screenshot (19).png"
+  ],
+  "yaseen-tea": [
+    "images/yaseentea.png"
   ]
 };
 
