@@ -499,6 +499,7 @@ body{
     height:380px;
     padding: 30px;
     border-radius: 40px;
+    object-fit: cover;
 }
 .about-img {
     width: 550px;
@@ -876,6 +877,8 @@ padding-bottom: 40px;
         height: 400px;
         width: 100%;
         position: relative;
+        object-fit: cover;
+        object-position: top;
     }
     .portfolio-image{
         height: 400px;
@@ -2580,8 +2583,8 @@ background-color: rgba(0,0,0,0.9);
 position: relative;
 margin: auto;
 padding: 0;
-width: 90%;
-max-width: 800px;
+width: 95%;
+max-width: 1200px;
 }
 
 .close {
@@ -2596,11 +2599,28 @@ cursor: pointer;
 
 .carousel {
 position: relative;
-overflow: hidden;
+overflow-y: auto;
+max-height: 85vh;
+scrollbar-width: thin;
+scrollbar-color: #c70039 transparent;
+}
+
+.carousel::-webkit-scrollbar {
+    width: 6px;
+}
+
+.carousel::-webkit-scrollbar-thumb {
+    background: #c70039;
+    border-radius: 10px;
+}
+
+.carousel::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
 }
 
 .carousel-image {
 width: 100%;
+height: auto;
 display: none;
 }
 
@@ -2614,13 +2634,15 @@ position: absolute;
 top: 50%;
 width: auto;
 padding: 16px;
-color: rgb(0, 0, 0);
+color: white;
+background-color: rgba(0,0,0,0.5);
 font-weight: bold;
-font-size: 20px;
+font-size: 24px;
 transition: 0.3s ease;
 border: none;
-background-color: transparent;
+border-radius: 0 3px 3px 0;
 user-select: none;
+z-index: 1001;
 }
 
 .prev {

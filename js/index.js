@@ -196,6 +196,12 @@ $(function(){
 
 // Map each project to its specific image set
 const projectImages = {
+  "erode-marine-aquarium": [
+    "images/erodemarineaquarium.png"
+  ],
+  "yaseen-tea": [
+    "images/yaseentea.png"
+  ],
   "app-idea": [
     "images/Screenshot (6).png",
     "images/Screenshot (7).png",
@@ -222,9 +228,6 @@ const projectImages = {
   "wow-graphics": [
     "images/Screenshot (18).png",
     "images/Screenshot (19).png"
-  ],
-  "yaseen-tea": [
-    "images/yaseentea.png"
   ]
 };
 
