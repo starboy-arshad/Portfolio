@@ -86,79 +86,22 @@ $(function(){
       };
 })
 $(function(){
+    function navigateTo(sectionId) {
+        // Close the navigation menu
+        gsap.to('#navigation-content', .6, {y: "-100%"});
+        // Scroll to section smoothly
+        document.querySelector(sectionId).scrollIntoView({behavior: 'smooth'});
+    }
 
-    $('#about-link').on('click',function(){
-      gsap.to('#navigation-content',0,{display:"none",delay:.7});
-      gsap.to('#navigation-content',0,{y:'-100%',delay:.7});
-  gsap.to('#header',0,{display:"none"});
-gsap.to('#blog',0,{display:"none"});
-gsap.to('#portfolio',0,{display:"none"});
-   gsap.to('#breaker',0,{display:"block"});
-   gsap.to('#breaker-two',0,{display:"block",delay:.1});
-gsap.to('#contact',0,{display:"none"});
-   gsap.to('#breaker',0,{display:"none",delay:2});
-   gsap.to('#breaker-two',0,{display:"none",delay:2});
-   gsap.to('#about',0,{display:"block",delay:.7});
-   gsap.to('#navigation-content',0,{display:'flex',delay:2});
- })
- $('#contact-link').on('click',function(){
-   gsap.to('#navigation-content',0,{display:"none",delay:.7});
-   gsap.to('#navigation-content',0,{y:'-100%',delay:.7});
-gsap.to('#header',0,{display:"none"});
-gsap.to('#about',0,{display:"none"});
-gsap.to('#blog',0,{display:"none"});
-gsap.to('#portfolio',0,{display:"none"});
-gsap.to('#breaker',0,{display:"block"});
-gsap.to('#breaker-two',0,{display:"block",delay:.1});
-gsap.to('#breaker',0,{display:"none",delay:2});
-gsap.to('#breaker-two',0,{display:"none",delay:2});
-gsap.to('#contact',0,{display:"block",delay:.7});
-gsap.to('#navigation-content',0,{display:'flex',delay:2});
-})
-$('#portfolio-link').on('click',function(){
-  gsap.to('#navigation-content',0,{display:"none",delay:.7});
-  gsap.to('#navigation-content',0,{y:'-100%',delay:.7});
-gsap.to('#header',0,{display:"none"});
-gsap.to('#about',0,{display:"none"});
-gsap.to('#contact',0,{display:"none"});
-gsap.to('#blog',0,{display:"none"});
-gsap.to('#breaker',0,{display:"block"});
-gsap.to('#breaker-two',0,{display:"block",delay:.1});
-gsap.to('#breaker',0,{display:"none",delay:2});
-gsap.to('#breaker-two',0,{display:"none",delay:2});
-gsap.to('#portfolio',0,{display:"block",delay:.7});
-gsap.to('#navigation-content',0,{display:'flex',delay:2});
-})
-$('#blog-link').on('click',function(){
-  gsap.to('#navigation-content',0,{display:"none",delay:.7});
-  gsap.to('#navigation-content',0,{y:'-100%',delay:.7});
-gsap.to('#header',0,{display:"none"});
-gsap.to('#about',0,{display:"none"});
-gsap.to('#portfolio',0,{display:"none"});
-gsap.to('#contact',0,{display:"none"});
-gsap.to('#breaker',0,{display:"block"});
-gsap.to('#breaker-two',0,{display:"block",delay:.1});
-gsap.to('#breaker',0,{display:"none",delay:2});
-gsap.to('#breaker-two',0,{display:"none",delay:2});
-gsap.to('#blog',0,{display:"block",delay:.7});
-gsap.to('#navigation-content',0,{display:'flex',delay:2});
-})
-$('#home-link').on('click',function(){
-  gsap.to('#navigation-content',0,{display:"none",delay:.7});
-  gsap.to('#navigation-content',0,{y:'-100%',delay:.7});
-gsap.to('#header',0,{display:"none"});
-gsap.to('#about',0,{display:"none"});
-gsap.to('#portfolio',0,{display:"none"});
-gsap.to('#contact',0,{display:"none"});
-gsap.to('#blog',0,{display:"none"});
-gsap.to('#breaker',0,{display:"block"});
-gsap.to('#breaker-two',0,{display:"block",delay:.1});
-gsap.to('#breaker',0,{display:"none",delay:2});
-gsap.to('#breaker-two',0,{display:"none",delay:2});
-gsap.to('#header',0,{display:"block",delay:.7});
-gsap.to('#navigation-content',0,{display:'flex',delay:2});
-})
-
+    $('#home-link').on('click', function(e){ e.preventDefault(); navigateTo('#header'); });
+    $('#about-link').on('click', function(e){ e.preventDefault(); navigateTo('#about'); });
+    $('#portfolio-link').on('click', function(e){ e.preventDefault(); navigateTo('#portfolio'); });
+    $('#contact-link').on('click', function(e){ e.preventDefault(); navigateTo('#contact'); });
+    // Footer CTA Link handling
+    $('#contact-link-footer').on('click', function(e) {
+        e.preventDefault();
+        $('#contact-link').click();
+    });
 })
 $(function(){
  var body =  document.querySelector('body');
@@ -299,3 +242,85 @@ window.onclick = function (event) {
   }
 };
 
+// Contact Form Handling
+$(function() {
+  $('#submit').on('click', function() {
+    const name = $('#name').val().trim();
+    const email = $('#email').val().trim();
+    const subject = $('#subject').val().trim();
+    const body = $('#body').val().trim();
+    const messageBox = $('#form-message');
+
+    if (!name || !email || !subject || !body) {
+      messageBox.text('Please fill in all fields.').css({
+        'display': 'block',
+        'background-color': 'rgba(255, 0, 0, 0.1)',
+        'color': '#ff4d4d',
+        'border': '1px solid #ff4d4d'
+      });
+      return;
+    }
+
+    // Simulate sending
+    $(this).text('Sending...').prop('disabled', true);
+    
+    setTimeout(() => {
+      messageBox.text('Message sent successfully!').css({
+        'display': 'block',
+        'background-color': 'rgba(0, 255, 0, 0.1)',
+        'color': '#2ecc71',
+        'border': '1px solid #2ecc71'
+      });
+      $('#submit').text('Submit').prop('disabled', false);
+      $('#myForm')[0].reset();
+      
+      setTimeout(() => {
+        messageBox.fadeOut();
+      }, 5000);
+    }, 1500);
+  });
+});
+
+// Skill Bars Animation on Scroll
+$(function() {
+  const observerOptions = {
+    threshold: 0.5
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        $(entry.target).find('.prog div').each(function() {
+          const width = $(this).text();
+          $(this).css('width', width);
+        });
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  const skillsSection = document.querySelector('#skills');
+  if (skillsSection) {
+    observer.observe(skillsSection);
+  }
+});
+
+// Back to Top Logic
+$(function() {
+    const backToTop = $('#back-to-top');
+    
+    $(window).on('scroll', function() {
+        if ($(window).scrollTop() > 300) {
+            backToTop.addClass('active');
+        } else {
+            backToTop.removeClass('active');
+        }
+    });
+    
+    backToTop.on('click', function() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+});

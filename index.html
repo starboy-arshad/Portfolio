@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="css/index.css">
     <!--main css file-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.6/gsap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
     <!--contains all the div-->
@@ -22,6 +23,11 @@
     <!--mouse  follower-->
         <div class="cursor"></div>
     <!--mouse  follower-->
+    <!--back to top-->
+    <div id="back-to-top" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+    <!--back to top end-->
     <!--loader-->
         <div id="loader">
             <span class="color">ARSHAD</span>AHAMAD
@@ -46,7 +52,7 @@
             <div class="navigation-links">
                 <a href="#" data-text="HOME" id="home-link" >HOME</a>
                 <a href="#" data-text="ABOUT" id="about-link" >ABOUT</a>
-                <a href="#" data-text="BLOG" id="blog-link" >BLOG</a>
+
                 <a href="#" data-text="PORTFOLIO" id="portfolio-link" >PORTFOLIO</a>
                 <a href="#" data-text="CONTACT" id="contact-link" >CONTACT</a>
             </div>
@@ -153,9 +159,46 @@
             <div class="about-img">
                 <img src="images/WhatsApp Image 2024-06-17 at 22.22.42_b586f234.jpg" alt="Your Image">
             </div>
+        </div>
+
+        <!--experience section-->
+        <div id="experience">
+            <div class="experience-header">
+                My <span class="color">Experience</span>
+                <span class="header-caption">My professional <span class="color">journey.</span></span>
             </div>
-    
+            <div class="experience-content">
+                <div class="timeline">
+                    <div class="timeline-item wow">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">2025 - Present</div>
+                        <div class="timeline-content">
+                            <h3>Freelance Web Developer</h3>
+                            <p>Designing and developing custom web solutions for various clients, focusing on responsive design and performance optimization.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item wow">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">2023</div>
+                        <div class="timeline-content">
+                            <h3>Full Stack Development Internship</h3>
+                            <p>Gained hands-on experience in building scalable applications using React and Spring Boot. Collaborated with a team to deliver high-quality features.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item wow">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">2020 - 2024</div>
+                        <div class="timeline-content">
+                            <h3>B.Tech in Information Technology</h3>
+                            <p>Completed my degree with a focus on software engineering, data structures, and web technologies.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
+        </div>
+        </div>
+        <!--experience section end-->
+
             <!--services start-->
             <div id="services">
                  <div class="color-changer">
@@ -195,7 +238,7 @@
             <!--services header end-->
             <!--services content-->
                     <div class="services-content">
-                           <div class="service-one service wow">
+                           <div class="service-one service wow glass-card">
                                <div class="service-img">
                                <img src="images/coding.png" alt="service-one">
                                </div>
@@ -204,7 +247,7 @@
                                 <p>"As a web designer, I specialize in creating responsive, intuitive, and user-centric websites that offer dynamic and interactive experiences."</p>
                                </div>
                            </div>
-                           <div class="service-two service wow">
+                           <div class="service-two service wow glass-card">
                                <div class="service-img">
                                <img src="images/output-onlinepngtools.png" alt="service-two">
                                </div>
@@ -213,7 +256,7 @@
                                 <p>"As a software developer, I am dedicated to building efficient, reliable, and scalable solutions tailored to meet diverse business needs."</p>
                                </div>
                            </div>
-                           <div class="service-three service wow">
+                           <div class="service-three service wow glass-card">
                             <div class="service-img">
                                <img src="images/bulb.png" alt="service-three">
                             </div>
@@ -234,71 +277,106 @@
                     <div class="skill-html skill">
                         <div class="skill-text">
                     <div class="html">
-                        HTML/CSS
+                        <i class="fab fa-html5"></i> HTML/CSS
                     </div>
                         </div>
                     <div class="html-prog wow prog">
-                 <div class="html-progress wow">95%</div>
+                 <div class="html-progress wow" style="width: 0%;">95%</div>
                     </div>
                     </div>
                     <div class="skill-html skill">
                         <div class="skill-text">
                     <div class="html">
-                      Javascript
+                        <i class="fab fa-js"></i> Javascript
                     </div>
                         </div>
                     <div class="html-prog wow prog">
-                 <div class="js-progress wow">90%</div>
+                 <div class="js-progress wow" style="width: 0%;">90%</div>
                     </div>
                     </div>
                     <div class="skill-html skill">
                         <div class="skill-text">
                     <div class="html">
-                        Java
+                        <i class="fab fa-java"></i> Java
                     </div>
                         </div>
                     <div class="html-prog wow prog">
-                 <div class="adobe-progress wow">83%</div>
+                 <div class="adobe-progress wow" style="width: 0%;">83%</div>
                     </div>
                     </div>
                     <div class="skill-html skill">
                         <div class="skill-text">
                     <div class="html">
-                        MySql
+                        <i class="fas fa-database"></i> MySql
                     </div>
                         </div>
                     <div class="html-prog wow prog">
-                 <div class="php-progress wow">87%</div>
+                 <div class="php-progress wow" style="width: 0%;">87%</div>
                     </div>
                     </div>
                     <div class="skill-html skill">
                         <div class="skill-text">
                     <div class="html">
-                        React
+                        <i class="fab fa-react"></i> React
                     </div>
                         </div>
                     <div class="html-prog wow prog">
-                 <div class="jquery-progress wow">74%</div>
+                 <div class="jquery-progress wow" style="width: 0%;">74%</div>
                     </div>
                     </div>
                     <div class="skill-html skill">
                         <div class="skill-text">
                     <div class="html">
-                        Spring Boot
+                        <i class="fas fa-leaf"></i> Spring Boot
                     </div>
                         </div>
                     <div class="html-prog wow prog">
-                 <div class="seo-progress wow">80%</div>
+                 <div class="seo-progress wow" style="width: 0%;">80%</div>
+                    </div>
+                    </div>
+                    <div class="skill-html skill">
+                        <div class="skill-text">
+                    <div class="html">
+                        <i class="fab fa-node-js"></i> Node.js
+                    </div>
+                        </div>
+                    <div class="html-prog wow prog">
+                 <div class="html-progress wow" style="width: 0%;">85%</div>
+                    </div>
+                    </div>
+                    <div class="skill-html skill">
+                        <div class="skill-text">
+                    <div class="html">
+                        <i class="fas fa-server"></i> Express.js
+                    </div>
+                        </div>
+                    <div class="html-prog wow prog">
+                 <div class="html-progress wow" style="width: 0%;">80%</div>
+                    </div>
+                    </div>
+                    <div class="skill-html skill">
+                        <div class="skill-text">
+                    <div class="html">
+                        <i class="fas fa-database"></i> MongoDB
+                    </div>
+                        </div>
+                    <div class="html-prog wow prog">
+                 <div class="html-progress wow" style="width: 0%;">75%</div>
+                    </div>
+                    </div>
+                    <div class="skill-html skill">
+                        <div class="skill-text">
+                    <div class="html">
+                        <i class="fas fa-database"></i> SQLite
+                    </div>
+                        </div>
+                    <div class="html-prog wow prog">
+                 <div class="html-progress wow" style="width: 0%;">85%</div>
                     </div>
                     </div>
                 </div>
             </div>
-    <!--copyright-section You Can Remove After Downloading-->
-            <div class="footer">
-             <div class="footer-text">
-                 <img src="./images/copyright.png" alt="copyright-img" class="images" height="14px"> Arshad Ahamad
-             </div>
-            </div>
+   
     <!--copyright-section-->
         </div>
         <!--about end-->
@@ -436,125 +514,16 @@
                  </div>
             </div>
                     <!--copyright-section You Can Remove After Downloading-->
-            <div class="footer">
+          <!--  <div class="footer">
                 <div class="footer-text">
                     <img src="./images/copyright.png" alt="copyright-img" class="images" height="14px"> Arshad Ahamad
                 </div>
-               </div>
+               </div>-->
        <!--copyright-section-->
              </div>
         <!--portfolio end-->
-        <!--blog-->
-        <div id="blog">
-            <div class="color-changer">
-                <div class="color-panel">
-                    <img src="images/gear.png" alt="">
-                </div>
-                <div class="color-selector">
-                    <div class="heading">Custom Colors</div>
-                    <div class="colors">
-                        <ul >
-                        <li>
-                            <a href="#0" class="color-red " title="color-red"></a>
-                        </li>
-                        <li>
-                            <a href="#0" class="color-purple" title="color-purple"></a>
-                        </li>
-                        <li>
-                            <a href="#0" class="color-malt" title="color-malt"></a>
-                        </li>
-                        <li>
-                            <a href="#0" class="color-green" title="color-green"></a>
-                        </li>
-                        <li>
-                            <a href="#0" class="color-blue" title="color-blue"></a>
-                        </li>
-                        <li>
-                            <a href="#0" class="color-orange" title="color-orange"></a>
-                        </li>
-                        </ul>
-                    </div>
-                </div>
-                </div>
-        <div class="blog-header"> Blogs</span>
-            <span class ="header-caption"> My Latest <span class="color"> blog posts.</span></span></div>
-            <div class="blog-content">
-                 <div class="blogs">
-                     <a href="#">
-                     <div class="img">
-                        <img src="images/SUPERMAN.png" alt="blog-one">
-                        <div class="blog-date">8 May,24</div>
-                     </div>
-                     <div class="blog-text">
-                         <h3>Alter Ego </h3>
-                         <p>An alter ego is a secondary or alternative personality that a person adopts, often to explore different aspects of themselves or to perform specific roles. This concept can manifest in various ways, such as through a fictional character, a distinct persona in social or professional settings, or a creative outlet. </p>
-                     </div></a>
-                 </div>      
-                 <div class="blogs">
-                    <a href="#">
-                    <div class="img">
-                        <img src="images/post-two.jpg" alt="blog-two">
-                        <div class="blog-date">16 Jan,24</div>
-                    </div>
-                    <div class="blog-text">
-                        <h3>Key To Be Productive</h3>
-                        <p>The key to being productive is setting clear goals, managing your time effectively, and creating a structured environment. Prioritize tasks, minimize distractions, and maintain a healthy work-life balance to stay focused and motivated. </p>
-                    </div></a>
-                </div>      
-                <div class="blogs">
-                    <a href="#">
-                    <div class="img">
-                        <img src="images/post-three.jpg" alt="blog-three">
-                        <div class="blog-date">30 Nov,23</div>
-                    </div>
-                    <div class="blog-text">
-                        <h3>Caffeine Addict</h3>
-                        <p>Caffeine works primarily by blocking adenosine, a neurotransmitter that promotes sleep. By inhibiting adenosine, caffeine indirectly increases the release of other neurotransmitters like dopamine and norepinephrine, which help keep you awake and alert.</p>
-                    </div></a>
-                </div>
-                <div class="blogs">
-                    <a href="#">
-                    <div class="img">
-                        <img src="images/post-four.jpg" alt="blog-four">
-                        <div class="blog-date">6 Jul,24</div>
-                    </div>
-                    <div class="blog-text">
-                        <h3>Web Development</h3>
-                        <p>Web development is where creativity meets code, transforming ideas into interactive digital experiences. It's a craft of building responsive, dynamic, and user-friendly websites that seamlessly connect design with functionality.</p>
-                    </div></a>
-                </div>  
-                <div class="blogs">
-                    <a href="#">
-                    <div class="img">
-                        <img src="images/post-five.jpg" alt="blog-five">
-                        <div class="blog-date">1 Jun,24</div>
-                    </div>
-                    <div class="blog-text">
-                        <h3>Work From Home</h3>
-                        <p>Working from home is a blend of freedom and focus—where creativity meets comfort. Craft your routine, set boundaries, and let productivity flow effortlessly in your own space..</p>
-                    </div></a>
-                </div>  
-                <div class="blogs">
-                    <a href="#">
-                    <div class="img">
-                        <img src="images/kobe.jpg" alt="blog-six">
-                        <div class="blog-date">28 Feb,24</div>
-                    </div>
-                    <div class="blog-text">
-                        <h3>Quotes</h3>
-                        <p>"Obsession beats Talent" &nbsp;  <br>-Kobe Bryant </p>
-                    </div></a>
-                </div>        
-            </div>
-               <!--copyright-section You Can Remove After Downloading-->
-               <div class="footer">
-                <div class="footer-text">
-                    <img src="./images/copyright.png" alt="copyright-img" class="images" height="14px"> Arshad Ahamad
-                </div>
-               </div>
-       <!--copyright-section-->
-        </div>
-        <!--blog end-->
+
+
         <!--contact-->
      <div id="contact">
         <div class="color-changer">
@@ -603,6 +572,7 @@
                     <input type="text" id="subject" placeholder="subject" class="input-subject">
                     <textarea id ="body" class="input-textarea" placeholder="message"></textarea>
                     <button type="button" id ="submit" value="send">Submit</button>
+                    <div id="form-message" style="display:none; margin-top: 20px; padding: 15px; border-radius: 5px; font-family: poppins; text-align: center;"></div>
                  </form>
                
              </div>
@@ -647,12 +617,23 @@
            </div>
         </div>
                     <!--copyright-section You Can Remove After Downloading-->
-                    <div class="footer">
-                        <div class="footer-text">
-                            <img src="./images/copyright.png" alt="copyright-img" class="images" height="14px"> Arshad Ahamad
-                        </div>
-                       </div>
-               <!--copyright-section-->
+            <div class="footer-enhanced">
+                <div class="footer-cta">
+                    <h2>Interested in working together?</h2>
+                    <p>I'm always open to discussing new projects, creative ideas or opportunities to be part of your visions.</p>
+                    <a href="#contact" id="contact-link-footer"><button class="cta-button">Get In Touch</button></a>
+                </div>
+                <div class="footer-social">
+                    <a href="https://www.instagram.com/ethan_hunt_on_mission?igsh=MzNlNGNkZWQ4Mg=="><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/profile.php?id=100032800116757"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.linkedin.com/in/arshad-ahamad-a69663269?trk=contact-info"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://x.com/ARSHAD_ROWDY"><i class="fab fa-twitter"></i></a>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2024 Arshad Ahamad. All rights reserved.</p>
+                </div>
+            </div>
+        <!--copyright-section-->
      </div>
         <!--contact end-->
     </div>

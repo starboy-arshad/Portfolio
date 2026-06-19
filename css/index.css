@@ -416,7 +416,6 @@ body{
 }
 #about{
     background-color: #101010;
-    display: none;
     width: 100%;
     height: auto;
     overflow: hidden;
@@ -905,7 +904,6 @@ padding-bottom: 40px;
     overflow: hidden;
 }
 #portfolio{
-    display: none;
     height: auto;
     overflow-x: hidden;
     background-color: #101010;
@@ -959,7 +957,6 @@ padding-bottom: 40px;
 
 #blog{
     background: #101010;
-    display: none;
     color:whitesmoke;
     width: 100%;
     height: auto;
@@ -1041,7 +1038,6 @@ padding-bottom: 40px;
     color: whitesmoke;
 }
 #contact{
-    display: none;
     height: auto;
     text-align: center;
     width: 100%;
@@ -1398,9 +1394,6 @@ For devices with smaller width like mobile phone
         z-index: 2;
         text-align: center;
     }
-    #contact{
-        display: none;
-    }
     #breaker{
         height: 50vh;
         width: 200%;
@@ -1495,17 +1488,29 @@ For devices with smaller width like mobile phone
         border-radius: 10%;
     }
     .service{
-        height:320px;
-        width:90%;
-        margin: 1.5%;
-        background-color: #191919;
-        display: inline-block;
-        box-shadow:0px 0px 25px rgb(0,0,0,.1);
+        height: auto;
+        min-height: 320px;
+        width: 90%;
+        margin: 20px auto;
+        background-color: #1a1a1a;
+        display: block;
+        box-shadow: 0px 15px 35px rgba(0,0,0,0.4);
         position: relative;
         text-align: center;
         z-index: 2;
-        border-radius: 10px;
+        border-radius: 20px;
         overflow: hidden;
+        padding-bottom: 30px;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    .service-description h2 {
+        font-size: 22px;
+        margin-bottom: 5px;
+    }
+    .service-description p {
+        font-size: 15px;
+        line-height: 1.6;
+        padding: 0 20px;
     }
     .service-img img{
         display: inline-block;
@@ -1799,8 +1804,11 @@ For devices with smaller width like mobile phone
                 opacity: .8;
             }
             .contact-info-icon-text p{
-                font-size: 14px;
+                font-size: 13px;
                 opacity: .7;
+                word-wrap: break-word;
+                word-break: break-all;
+                padding-right: 10px;
             }
             .hire-me-section{
                 display: none;
@@ -2655,4 +2663,271 @@ right: 0;
 
 .prev:hover, .next:hover {
 background-color: rgba(255,255,255,0.2);
+}
+
+/* Experience Section Styles */
+#experience {
+    padding: 60px 30px;
+    background: #101010;
+}
+.experience-header {
+    text-align: center;
+    font-size: 45px;
+    font-family: raleway;
+    color: whitesmoke;
+    font-weight: 900;
+    margin-bottom: 50px;
+}
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+}
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    background: #c70039;
+    top: 0;
+    bottom: 0;
+    left: 20px;
+}
+.timeline-item {
+    padding: 10px 40px;
+    position: relative;
+    background: inherit;
+    width: 100%;
+    margin-bottom: 30px;
+}
+.timeline-dot {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    left: 13px;
+    background: #c70039;
+    border-radius: 50%;
+    z-index: 1;
+    top: 15px;
+}
+.timeline-date {
+    font-family: poppins;
+    color: #c70039;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.timeline-content {
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    color: whitesmoke;
+}
+.timeline-content h3 {
+    font-family: poppins;
+    margin-bottom: 10px;
+}
+.timeline-content p {
+    font-family: poppins;
+    font-weight: 200;
+    opacity: 0.8;
+}
+
+/* Testimonials Section Styles */
+#testimonials {
+    padding: 60px 30px;
+    background: #101010;
+}
+.testimonials-header {
+    text-align: center;
+    font-size: 45px;
+    font-family: raleway;
+    color: whitesmoke;
+    font-weight: 900;
+    margin-bottom: 50px;
+}
+.testimonials-content {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.testimonial-card {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 20px;
+    width: calc(45% - 15px);
+    min-width: 300px;
+    transition: transform 0.3s ease;
+}
+.testimonial-card:hover {
+    transform: translateY(-10px);
+    background: rgba(255, 255, 255, 0.05);
+}
+.testimonial-text {
+    font-family: poppins;
+    font-style: italic;
+    color: whitesmoke;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    opacity: 0.9;
+}
+.testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.testimonial-author img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #c70039;
+}
+.author-info h4 {
+    color: whitesmoke;
+    font-family: poppins;
+    margin: 0;
+}
+.author-info p {
+    color: #c70039;
+    font-family: poppins;
+    font-size: 14px;
+    margin: 0;
+}
+
+/* Glassmorphism Utility and Enhanced Cards */
+.glass-card {
+    background: rgba(255, 255, 255, 0.03) !important;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+.service:hover, .blogs:hover {
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+/* Responsive fixes for new sections */
+@media (max-width: 768px) {
+    .testimonial-card {
+        width: 100%;
+    }
+    .timeline::after {
+        left: 20px;
+    }
+}
+
+/* Back to Top Button */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: #c70039;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 99;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s ease;
+    box-shadow: 0 4px 15px rgba(199, 0, 57, 0.4);
+}
+.back-to-top.active {
+    opacity: 1;
+    visibility: visible;
+}
+.back-to-top:hover {
+    transform: translateY(-5px);
+    background: #a5002f;
+}
+
+
+
+/* Enhanced Footer Styles */
+.footer-enhanced {
+    padding: 80px 30px 40px;
+    background: #0a0a0a;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+.footer-cta h2 {
+    font-family: raleway;
+    font-size: 36px;
+    color: whitesmoke;
+    margin-bottom: 15px;
+}
+.footer-cta p {
+    font-family: poppins;
+    font-weight: 200;
+    color: rgba(255, 255, 255, 0.7);
+    max-width: 600px;
+    margin: 0 auto 30px;
+}
+.cta-button {
+    padding: 15px 40px;
+    background: #c70039;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-family: poppins;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(199, 0, 57, 0.3);
+}
+.cta-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(199, 0, 57, 0.5);
+}
+.footer-social {
+    margin: 50px 0 30px;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+.footer-social a {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 24px;
+    transition: all 0.3s ease;
+}
+.footer-social a:hover {
+    color: #c70039;
+    transform: translateY(-5px);
+}
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 30px;
+    color: rgba(255, 255, 255, 0.4);
+    font-family: poppins;
+    font-size: 14px;
+}
+
+/* Interactive Project Cards (Tilt Effect) */
+.portfolio {
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.portfolio:hover {
+    transform: perspective(1000px) rotateX(2deg) rotateY(-2deg) scale(1.02);
+}
+
+/* Sleeker Scrollbar */
+::-webkit-scrollbar {
+    width: 6px;
+}
+::-webkit-scrollbar-thumb {
+    background: #c70039;
+    border-radius: 10px;
+    transition: background 0.3s ease;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #ff1a5e;
 }
