@@ -163,6 +163,7 @@ body{
 .menubar:hover{
     opacity: 1;
 }
+
 .close-first , .close-second{
  height: 2px;
  width: 35px;
