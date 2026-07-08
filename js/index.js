@@ -264,16 +264,21 @@ $(function() {
     // Web3Forms Submission
     $(this).text('Sending...').prop('disabled', true);
 
-    const formData = new FormData();
-    formData.append("access_key", "29d80257-a571-4f60-9de1-57f226b18f2d");
-    formData.append("name", name);
-    formData.append("email", email);
-    formData.append("subject", subject);
-    formData.append("message", body);
+    const payload = JSON.stringify({
+      access_key: "29d80257-a571-4f60-9de1-57f226b18f2d",
+      name: name,
+      email: email,
+      subject: subject,
+      message: body
+    });
 
     fetch("https://api.web3forms.com/submit", {
       method: "POST",
-      body: formData
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+      },
+      body: payload
     })
     .then(async (response) => {
       let json = await response.json();
