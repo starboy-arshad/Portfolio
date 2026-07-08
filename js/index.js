@@ -261,6 +261,18 @@ $(function() {
       return;
     }
 
+    // Basic email validation regex
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      messageBox.text('Please enter a valid email address.').css({
+        'display': 'block',
+        'background-color': 'rgba(255, 0, 0, 0.1)',
+        'color': '#ff4d4d',
+        'border': '1px solid #ff4d4d'
+      });
+      return;
+    }
+
     // Web3Forms Submission
     $(this).text('Sending...').prop('disabled', true);
 
