@@ -261,23 +261,55 @@ $(function() {
       return;
     }
 
-    // Simulate sending
+    // Web3Forms Submission
     $(this).text('Sending...').prop('disabled', true);
-    
-    setTimeout(() => {
-      messageBox.text('Message sent successfully!').css({
+
+    const formData = new FormData();
+    formData.append("access_key", "29d80257-a571-4f60-9de1-57f226b18f2d");
+    formData.append("name", name);
+    formData.append("email", email);
+    formData.append("subject", subject);
+    formData.append("message", body);
+
+    fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData
+    })
+    .then(async (response) => {
+      let json = await response.json();
+      if (response.status == 200) {
+        messageBox.text('Message sent successfully!').css({
+          'display': 'block',
+          'background-color': 'rgba(0, 255, 0, 0.1)',
+          'color': '#2ecc71',
+          'border': '1px solid #2ecc71'
+        });
+        $('#myForm')[0].reset();
+      } else {
+        console.log(response);
+        messageBox.text(json.message || 'Something went wrong!').css({
+          'display': 'block',
+          'background-color': 'rgba(255, 0, 0, 0.1)',
+          'color': '#ff4d4d',
+          'border': '1px solid #ff4d4d'
+        });
+      }
+    })
+    .catch((error) => {
+      console.log(error);
+      messageBox.text('Something went wrong!').css({
         'display': 'block',
-        'background-color': 'rgba(0, 255, 0, 0.1)',
-        'color': '#2ecc71',
-        'border': '1px solid #2ecc71'
+        'background-color': 'rgba(255, 0, 0, 0.1)',
+        'color': '#ff4d4d',
+        'border': '1px solid #ff4d4d'
       });
+    })
+    .finally(() => {
       $('#submit').text('Submit').prop('disabled', false);
-      $('#myForm')[0].reset();
-      
       setTimeout(() => {
         messageBox.fadeOut();
       }, 5000);
-    }, 1500);
+    });
   });
 });
 
